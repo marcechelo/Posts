@@ -1,0 +1,57 @@
+.posts{
+    margin: 0;
+    margin-top: 5rem;
+
+    .new{
+        text-align: right;
+
+        .btn{
+            //width: 20%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif;
+        }
+    }
+
+    .content{
+        .posts{
+            margin: 0;
+            margin-top: 4rem;
+        
+            &-content{
+                padding: 1rem 5rem;
+                margin: 0;
+        
+                .desc{
+        
+                    .title{
+                        font-size: 2rem;
+                        font-family: Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif;
+                        font-weight: bold;
+                        text-transform: lowercase;
+        
+                        .inline{
+                            font-size: 3.5rem;
+                            font-family: 'MONOPOLYI';
+                            text-transform: uppercase;
+                        }
+                    }
+        
+                    .cont{
+                        margin-top: 2rem;
+                        font-size: 1rem;
+                        line-height: 1.2em;
+                        color: #666;
+                    }
+                    
+                }
+                
+                .image{
+                    //background-image: url('https://hodinkee.imgix.net/uploads/images/4de23fb8-4c34-4662-8fe5-5e7d739093eb/bremont-hero?auto=format&ch=Width%2CDPR%2CSave-Data&dpr=4&fit=crop&fm=jpg&h=350&ixjsv=2.2.4&ixlib=rails-1.1.0&q=30&usm=12&w=720');
+                    background-size: 100% 100%;
+                    height: 60vh;
+                    //width: 100%;
+        
+                }
+            }
+        }
+    }
+}

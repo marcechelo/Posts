@@ -9,11 +9,16 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocalPostComponent } from './local-post/local-post.component';
+import { RemotePostComponent } from './remote-post/remote-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LocalPostComponent,
+    RemotePostComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InfiniteScrollModule,
     NgxSpinnerModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,68 @@
+<div class="row posts">
+
+    <!-- NEW POST -->
+    <div class="col-sm-12 new">
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            NEW POST
+        </button>
+    </div>
+    <!-- END NEW POST -->
+
+    <!-- CONTENT -->
+    <div class="col-sm-12 content">
+        <div class="row posts" 
+        infinite-scroll 
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="1000"
+        (scrolled)="onScroll()"
+        >
+            <div class="col-sm-12 row posts-content" *ngFor="let post of posts">
+                <div class="col-sm-4 desc">
+                    <h1 class="title">
+                        <span class="inline">{{post.title.split(' ')[0]}} </span>
+                        {{post.title.substr(post.title.indexOf(' ') + 1)}}
+                    </h1>
+                    <div class="cont">
+                        <p>{{post['description']}}</p>
+                    </div>
+                </div>
+                <div class="col-sm-8 image" style="background-image: url('{{post.image}}');"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- END CONTENT -->
+    
+  
+    <!-- MODAL -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" >
+            <!--<div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>-->
+            <div class="modal-body">
+                <form style="text-align: left; margin-top: 5vh;" id="ngForm" [formGroup]="checkoutForm" (ngSubmit)='onSubmit()'>
+                    <div class="form-group">
+                      <textarea formControlName="title" type="" class="form-control" id="inputTitle" placeholder="Title"></textarea>
+                    </div>
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <textarea formControlName="description" type="text" class="form-control" id="inputdescription" placeholder="description"></textarea>
+                    </div>
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <textarea class="form-control" type="text" formControlName="image" class="form-control" id="inputImage" placeholder="Image URL"></textarea>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary" data-bs-dismiss="modal" form="ngForm" mat-flat-button type="submit" [disabled]="!checkoutForm.valid">SAVE</button> <br>
+            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+</div>

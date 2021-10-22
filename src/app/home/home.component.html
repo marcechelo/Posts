@@ -4,8 +4,16 @@
         <div class="menuBar-content">
             <div class="logo brown">logo</div>
             <div class="categorys brown">
-                <div class="categorys-local flex">local</div>
-                <div class="categorys-remote flex">remote</div>
+                <div class="categorys-local flex">
+                    <a routerLink="local">
+                        <span>Local</span>
+                    </a>
+                </div>
+                <div class="categorys-remote flex">
+                    <a routerLink="remote">
+                        <span>Remote</span>
+                    </a>
+                </div>
                 <div class="categorys-remoteP flex">remote +</div>
             </div>
             <div class="login brown">login</div>
@@ -14,24 +22,8 @@
     <!-- END MENU -->
 
     <!-- POSTS -->
-    <div class="row posts" 
-    infinite-scroll 
-    [infiniteScrollDistance]="2"
-    [infiniteScrollThrottle]="1000"
-    (scrolled)="onScroll()"
-    >
-        <div class="col-sm-12 row posts-content" *ngFor="let post of posts">
-            <div class="col-sm-4 desc">
-                <h1 class="title">
-                    <span class="inline">{{post.title.split(' ')[0]}} </span>
-                    {{post.title.substr(post.title.indexOf(' ') + 1)}}
-                </h1>
-                <div class="cont">
-                    <p>{{post['description']}}</p>
-                </div>
-            </div>
-            <div class="col-sm-8 image" style="background-image: url('{{post.image}}');"></div>
-        </div>
+    <div class="col-sm-12 posts" style="width: 100%;">
+        <router-outlet></router-outlet>
     </div>
     <!-- END POSTS -->
 
