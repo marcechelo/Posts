@@ -18,6 +18,8 @@ export class LocalPostComponent implements OnInit {
   });
 
   posts:PostInterface[]= [];
+  newPost: boolean = false;
+  editIndex: number = 0;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -34,6 +36,12 @@ export class LocalPostComponent implements OnInit {
     }
   }
 
+  createPost(){
+    console.log("eneter new");
+    
+    this.newPost = true;
+  }
+
   onSubmit(){
 
     let newPost = {
@@ -42,14 +50,28 @@ export class LocalPostComponent implements OnInit {
       image: this.checkoutForm.value.image
       
     }
-    this.posts.push(newPost);
+
+    if (this.newPost) {
+      this.posts.push(newPost);
+    } else {
+      this.posts[this.editIndex] = newPost;
+    }
+
     this.checkoutForm.reset();
     localStorage.setItem('posts', JSON.stringify({posts: this.posts}));
     
   }
 
-  onScroll(){
-    console.log('hola mundo 2');
+  deletePost(postId:number){
+    this.posts.splice(postId, 1);
+    localStorage.setItem('posts', JSON.stringify({posts: this.posts}));
+  }
+
+  editPost(post:PostInterface, index:number){
+    this.editIndex = index;
+    this.checkoutForm.patchValue({title: post.title})
+    this.checkoutForm.patchValue({description: post.description})
+    this.checkoutForm.patchValue({image: post.image})    
   }
 
 }

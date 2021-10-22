@@ -1,26 +1,68 @@
+:focus {
+    outline:none !important;
+    box-shadow: none;
+}
+
 .posts{
     margin: 0;
     margin-top: 5rem;
 
+    .btn{
+        font-family: Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif;
+        font-weight: bold;
+        border-radius: 0;
+    }
+
+    .btn-white{
+        font-size: 0.9rem;
+        margin-right: 1rem;
+        background-color: white;
+        color: rgba(34, 34, 34, 1);
+        border: solid 2px rgba(34, 34, 34, 1);
+        transition: 0.5s;
+    }
+
+    .btn-white:hover{
+        background-color: rgba(34, 34, 34, 1);
+        color: white;
+    }
+
+    .btn-black{
+        margin-right: 5rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif;
+        background-color: rgba(34, 34, 34, 0.7);
+        color: white;
+    }
+
+    /*.btn-balck:hover{
+        background-color: white;
+        color: rgba(34, 34, 34, 1);
+    }*/
+
     .new{
         text-align: right;
 
-        .btn{
-            //width: 20%;
+        /*.btn{
+            margin-right: 5rem;
             font-family: Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif;
-        }
+            background-color: rgba(34, 34, 34, 0.7);
+            color: white;
+            font-weight: bold;
+            border-radius: 0;
+        }*/
     }
 
     .content{
         .posts{
             margin: 0;
-            margin-top: 4rem;
+            margin-top: 2rem;
         
             &-content{
                 padding: 1rem 5rem;
                 margin: 0;
         
                 .desc{
+                    position: relative;
         
                     .title{
                         font-size: 2rem;
@@ -41,6 +83,29 @@
                         line-height: 1.2em;
                         color: #666;
                     }
+
+                    .actions{
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+
+                        /*.btn{
+                            font-size: 0.9rem;
+                            font-family: Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif;
+                            margin-right: 1rem;
+                            background-color: white;
+                            color: rgba(34, 34, 34, 1);
+                            font-weight: bold;
+                            border-radius: 0;
+                            border: solid 2px rgba(34, 34, 34, 1);
+                            transition: 0.5s;
+                        }
+
+                        .btn:hover{
+                            background-color: rgba(34, 34, 34, 1);
+                            color: white;
+                        }*/
+                    }
                     
                 }
                 
@@ -53,5 +118,17 @@
                 }
             }
         }
+    }
+
+    .modal{
+        .btn{
+            font-size: 0.9rem;
+            margin-right: 1rem;
+            background-color: rgba(34, 34, 34, 1);
+            color: white;
+            border: solid 2px rgba(34, 34, 34, 1);
+            transition: 0.5s;
+        }
+
     }
 }
