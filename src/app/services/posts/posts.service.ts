@@ -24,7 +24,6 @@ export class PostsService {
     let response = new Subject<any>();
     this.http.get<any>('https://posts-code.herokuapp.com/api/posts')
     .subscribe(posts =>{
-      console.log(posts);
       let aux: Object[] = posts;
       response.next(aux);
     });

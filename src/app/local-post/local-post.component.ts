@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { PostsService } from '../services/posts/posts.service';
 import { PostInterface } from '../services/posts/posts.model';
-
+  
 @Component({
   selector: 'app-local-post',
   templateUrl: './local-post.component.html',
   styleUrls: ['./local-post.component.scss']
 })
+
+
+
 export class LocalPostComponent implements OnInit {
 
   checkoutForm = this.formBuilder.group({
@@ -20,6 +23,8 @@ export class LocalPostComponent implements OnInit {
   posts:PostInterface[]= [];
   newPost: boolean = false;
   editIndex: number = 0;
+  certEscolar:any;
+  imageUrl:any;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -37,20 +42,18 @@ export class LocalPostComponent implements OnInit {
   }
 
   createPost(){
-    console.log("eneter new");
-    
+    console.log("new")
     this.newPost = true;
   }
 
   onSubmit(){
-
     let newPost = {
       title: this.checkoutForm.value.title,
       description: this.checkoutForm.value.description,
-      image: this.checkoutForm.value.image
+      image: this.imageUrl
       
     }
-
+    
     if (this.newPost) {
       this.posts.push(newPost);
     } else {
@@ -68,10 +71,23 @@ export class LocalPostComponent implements OnInit {
   }
 
   editPost(post:PostInterface, index:number){
+    this.newPost = false;
     this.editIndex = index;
     this.checkoutForm.patchValue({title: post.title})
     this.checkoutForm.patchValue({description: post.description})
     this.checkoutForm.patchValue({image: post.image})    
+    this.imageUrl = post.image;
+  }
+
+  onFileChanged(event: any) {
+    if (event.target.files && event.target.files.length) {
+      let reader = new FileReader();
+      reader.addEventListener("load", () =>{
+        this.imageUrl = reader.result;
+        this.checkoutForm.patchValue({image: this.imageUrl})
+      })
+      reader.readAsDataURL(event.target.files[0]);
+    }
   }
 
 }
