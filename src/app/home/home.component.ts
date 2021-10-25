@@ -8,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 
 export class HomeComponent implements OnInit {
 
-  id = 1;
+  id:any;
 
   constructor() {
   }
 
   ngOnInit(): void { 
+    this.id = 1;
   }
 
   addClass(id: any) {

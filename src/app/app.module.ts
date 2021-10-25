@@ -13,6 +13,7 @@ import { LocalPostComponent } from './local-post/local-post.component';
 import { RemotePostComponent } from './remote-post/remote-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PlusPostComponent } from './plus-post/plus-post.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { PlusPostComponent } from './plus-post/plus-post.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
