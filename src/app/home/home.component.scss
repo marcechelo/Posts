@@ -46,6 +46,25 @@
                 flex: 1 1;
                 text-align: right;
             }
+
+            .borederLine{
+                border-bottom: solid 2px rgba(51,51,51, 0.7);
+            }
+
+            a{
+                text-decoration: none;
+                transition: 0.1s;
+
+                .options{
+                    color: rgba(51,51,51, 0.7);
+                }
+            }
+
+            a:hover{
+                border-bottom: solid 2px rgba(51,51,51, 0.7);
+            }
+
+            
         }
     }
 

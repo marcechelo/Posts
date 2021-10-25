@@ -5,16 +5,20 @@
             <div class="logo brown">logo</div>
             <div class="categorys brown">
                 <div class="categorys-local flex">
-                    <a routerLink="local">
-                        <span>Local</span>
+                    <a routerLink="local" [ngClass]="{'borederLine': id === 1 }" id="1" (click)="addClass(id=1)">
+                        <span class="options">Local</span>
                     </a>
                 </div>
                 <div class="categorys-remote flex">
-                    <a routerLink="remote">
-                        <span>Remote</span>
+                    <a routerLink="remote" [ngClass]="{'borederLine': id === 2 }" id="2" (click)="addClass(id=2)">
+                        <span class="options">Remote</span>
                     </a>
                 </div>
-                <div class="categorys-remoteP flex">remote +</div>
+                <div class="categorys-remoteP flex">
+                    <a routerLink="plus" [ngClass]="{'borederLine': id === 3 }" id="3" (click)="addClass(id=3)">
+                        <span class="options">Remote +</span>
+                    </a>
+                </div>
             </div>
             <div class="login brown">login</div>
         </div>

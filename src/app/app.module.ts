@@ -12,13 +12,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocalPostComponent } from './local-post/local-post.component';
 import { RemotePostComponent } from './remote-post/remote-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PlusPostComponent } from './plus-post/plus-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LocalPostComponent,
-    RemotePostComponent
+    RemotePostComponent,
+    PlusPostComponent
   ],
   imports: [
     BrowserModule,

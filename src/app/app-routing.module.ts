@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LocalPostComponent } from './local-post/local-post.component';
 import { RemotePostComponent } from './remote-post/remote-post.component';
+import { PlusPostComponent } from './plus-post/plus-post.component';
 
 const routes: Routes = [
   {
@@ -21,9 +22,7 @@ const routes: Routes = [
     children:[
       {path: 'local', component: LocalPostComponent},
       {path: 'remote', component: RemotePostComponent},
-      /*{path: 'upload_products', component: UploadProductsComponent},
-      {path: 'settings', component: SettingsComponent},
-      {path: 'historico', component: HistoricoComponent},*/
+      {path: 'plus', component: PlusPostComponent},
     ]
   },
   {
