@@ -2,25 +2,25 @@
     <!-- MENU -->
     <div class="menuBar">
         <div class="menuBar-content">
-            <div class="logo brown">logo</div>
+            <!--<div class="logo brown">logo</div>-->
             <div class="categorys brown">
-                <div class="categorys-local flex">
+                <div class="categorys-local" style="width: 30%; display: inline-block;">
                     <a routerLink="local" [ngClass]="{'borederLine': id === 1 }" id="1" (click)="addClass(id=1)">
                         <span class="options">Local</span>
                     </a>
                 </div>
-                <div class="categorys-remote flex">
+                <div class="categorys-remote" style="width: 30%; display: inline-block;">
                     <a routerLink="remote" [ngClass]="{'borederLine': id === 2 }" id="2" (click)="addClass(id=2)">
                         <span class="options">Remote</span>
                     </a>
                 </div>
-                <div class="categorys-remoteP flex">
+                <div class="categorys-remoteP" style="width: 30%; display: inline-block;">
                     <a routerLink="plus" [ngClass]="{'borederLine': id === 3 }" id="3" (click)="addClass(id=3)">
                         <span class="options">Remote +</span>
                     </a>
                 </div>
             </div>
-            <div class="login brown">login</div>
+            <!--<div class="login brown">login</div>-->
         </div>
     </div>
     <!-- END MENU -->
